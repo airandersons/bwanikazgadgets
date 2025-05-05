@@ -21,26 +21,22 @@
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
     <style>
-        /* Inherit all root variables and base styles from main CSS */
         :root {
             --primary: #0d6efd;
             --secondary: #6c757d;
             --dark: #212529;
             --light: #f8f9fa;
             --danger: #dc3545;
-            --warning: #ffc107;
             --success: #198754;
-            --info: #0dcaf0;
         }
 
-        /* Product Detail Page Specific Styles */
         .product-detail {
             background: #fff;
             border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
         }
 
+        /* Product Gallery */
         .product-gallery {
             position: relative;
         }
@@ -50,7 +46,7 @@
             height: 400px;
             object-fit: contain;
             background: #f9f9f9;
-            padding: 20px;
+            padding: 30px;
             border-bottom: 1px solid #eee;
         }
 
@@ -75,11 +71,12 @@
             border-color: var(--primary);
         }
 
+        /* Product Badge */
         .product-badge {
             position: absolute;
             top: 15px;
             left: 15px;
-            background: var(--danger);
+            background: var(--primary);
             color: white;
             padding: 5px 10px;
             border-radius: 4px;
@@ -87,6 +84,7 @@
             font-weight: 600;
         }
 
+        /* Product Info */
         .product-info {
             padding: 30px;
         }
@@ -105,7 +103,7 @@
         }
 
         .product-rating {
-            color: var(--warning);
+            color: var(--primary);
             margin-right: 15px;
         }
 
@@ -140,6 +138,7 @@
             margin-bottom: 20px;
         }
 
+        /* Action Buttons */
         .product-actions {
             display: flex;
             gap: 10px;
@@ -198,38 +197,21 @@
         }
 
         .btn-wishlist:hover {
-            color: var(--danger);
-            border-color: var(--danger);
+            color: var(--primary);
+            border-color: var(--primary);
         }
 
-        .product-meta-info {
-            margin-bottom: 25px;
-        }
-
-        .meta-item {
-            display: flex;
-            margin-bottom: 8px;
-        }
-
-        .meta-label {
-            width: 120px;
-            color: var(--secondary);
-        }
-
-        .meta-value {
-            font-weight: 500;
-        }
-
+        /* Product Tabs */
         .product-tabs {
             margin-top: 40px;
         }
 
         .nav-tabs {
-            border-bottom: 1px solid #dee2e6;
+            border-bottom: 2px solid var(--primary);
         }
 
         .nav-link {
-            color: var(--dark);
+            color: var(--secondary);
             font-weight: 500;
             border: none;
             padding: 12px 20px;
@@ -237,17 +219,18 @@
 
         .nav-link.active {
             color: var(--primary);
-            border-bottom: 2px solid var(--primary);
-            background: transparent;
+            background: rgba(13, 110, 253, 0.05);
+            border-bottom: 3px solid var(--primary);
         }
 
         .tab-content {
-            padding: 20px;
-            border: 1px solid #dee2e6;
+            padding: 25px;
+            border: 1px solid #eee;
             border-top: none;
             border-radius: 0 0 8px 8px;
         }
 
+        /* Related Products */
         .related-products {
             margin-top: 60px;
         }
@@ -270,9 +253,23 @@
             background: var(--primary);
         }
 
+        .related-products .product-img {
+            height: 150px;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+
+        .related-products .product-title {
+            font-size: 15px;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        /* Responsive Fixes */
         @media (max-width: 768px) {
             .main-image {
                 height: 300px;
+                padding: 15px;
             }
             
             .product-actions {
@@ -281,6 +278,7 @@
             
             .quantity-selector {
                 width: 100%;
+                justify-content: center;
             }
             
             .btn-cart {
@@ -291,7 +289,7 @@
 </head>
 
 <body>
-    <!-- Top Bar Start (Same as Homepage) -->
+    <!-- Top Bar (Same as Homepage) -->
     <div class="top-bar">
         <div class="container">
             <div class="row align-items-center">
@@ -311,9 +309,8 @@
             </div>
         </div>
     </div>
-    <!-- Top Bar End -->
 
-    <!-- Main Header Start (Same as Homepage) -->
+    <!-- Header (Same as Homepage) -->
     <header class="main-header py-2">
         <div class="container">
             <div class="row align-items-center">
@@ -341,9 +338,8 @@
             </div>
         </div>
     </header>
-    <!-- Main Header End -->
 
-    <!-- Navigation Start (Same as Homepage) -->
+    <!-- Navigation (Same as Homepage) -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-2">
         <div class="container">
             <div class="category-menu d-flex align-items-center" id="categoryToggle">
@@ -385,9 +381,8 @@
             </div>
         </div>
     </nav>
-    <!-- Navigation End -->
 
-    <!-- Breadcrumb Start -->
+    <!-- Breadcrumb -->
     <div class="container py-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -398,9 +393,8 @@
             </ol>
         </nav>
     </div>
-    <!-- Breadcrumb End -->
 
-    <!-- Product Detail Start -->
+    <!-- Product Detail -->
     <section class="py-3">
         <div class="container">
             <div class="product-detail">
@@ -474,10 +468,6 @@
                                     <span class="meta-label">Warranty:</span>
                                     <span class="meta-value">1 Year Apple Warranty</span>
                                 </div>
-                                <div class="meta-item">
-                                    <span class="meta-label">SKU:</span>
-                                    <span class="meta-value">IP15P-BLK-128</span>
-                                </div>
                             </div>
                             
                             <div class="share-buttons mt-4">
@@ -491,6 +481,7 @@
                     </div>
                 </div>
                 
+                <!-- Product Tabs -->
                 <div class="product-tabs">
                     <ul class="nav nav-tabs" id="productTabs" role="tablist">
                         <li class="nav-item">
@@ -502,22 +493,17 @@
                         <li class="nav-item">
                             <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab">Reviews (24)</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="warranty-tab" data-toggle="tab" href="#warranty" role="tab">Warranty</a>
-                        </li>
                     </ul>
                     <div class="tab-content" id="productTabsContent">
                         <div class="tab-pane fade show active" id="description" role="tabpanel">
                             <h5>Product Description</h5>
                             <p>The iPhone 15 Pro represents a revolutionary leap in smartphone technology. Crafted from aerospace-grade titanium, it's our lightest Pro model ever. The 6.1-inch Super Retina XDR display with ProMotion is perfect for viewing HDR content and playing graphics-intensive games.</p>
-                            <p>The A17 Pro chip delivers unprecedented performance for demanding tasks like gaming, photography, and augmented reality. The pro camera system takes photography to new heights with a 48MP Main camera, Ultra Wide camera, and Telephoto camera with 3x optical zoom.</p>
                             <ul>
                                 <li>A17 Pro chip with 6-core CPU and 6-core GPU</li>
                                 <li>Pro camera system with 48MP Main, 12MP Ultra Wide, and 12MP Telephoto</li>
                                 <li>6.1-inch Super Retina XDR display with ProMotion</li>
                                 <li>Titanium design with textured matte glass back</li>
                                 <li>USB-C for faster transfers and charging</li>
-                                <li>iOS 17 with powerful new features</li>
                             </ul>
                         </div>
                         <div class="tab-pane fade" id="specs" role="tabpanel">
@@ -526,45 +512,28 @@
                                 <tbody>
                                     <tr>
                                         <th>Display</th>
-                                        <td>6.1-inch Super Retina XDR display, 2556x1179 resolution, 460 ppi</td>
+                                        <td>6.1-inch Super Retina XDR, 2556x1179 resolution</td>
                                     </tr>
                                     <tr>
                                         <th>Chip</th>
-                                        <td>A17 Pro chip with 6-core CPU, 6-core GPU, and 16-core Neural Engine</td>
+                                        <td>A17 Pro chip with 6-core CPU</td>
                                     </tr>
                                     <tr>
                                         <th>Camera</th>
-                                        <td>Pro camera system: 48MP Main, 12MP Ultra Wide, 12MP Telephoto with 3x optical zoom</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Video Recording</th>
-                                        <td>4K at 24 fps, 25 fps, 30 fps, or 60 fps</td>
+                                        <td>48MP Main, 12MP Ultra Wide, 12MP Telephoto</td>
                                     </tr>
                                     <tr>
                                         <th>Battery</th>
                                         <td>Up to 23 hours video playback</td>
                                     </tr>
                                     <tr>
-                                        <th>Charging</th>
-                                        <td>USB-C, MagSafe, Qi wireless charging</td>
-                                    </tr>
-                                    <tr>
                                         <th>Water Resistance</th>
-                                        <td>IP68 (maximum depth of 6 meters up to 30 minutes)</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Dimensions</th>
-                                        <td>146.6 x 70.6 x 8.25 mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Weight</th>
-                                        <td>187 grams</td>
+                                        <td>IP68 (6 meters for 30 minutes)</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                         <div class="tab-pane fade" id="reviews" role="tabpanel">
-                            <h5>Customer Reviews</h5>
                             <div class="media mb-4">
                                 <img src="img/user-1.jpg" class="mr-3 rounded-circle" width="50" alt="User review">
                                 <div class="media-body">
@@ -579,24 +548,7 @@
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                     </div>
-                                    <p>This phone is absolutely amazing! The camera quality is outstanding and the titanium finish feels premium. Delivery from Bwanikaz was super fast too.</p>
-                                </div>
-                            </div>
-                            <div class="media mb-4">
-                                <img src="img/user-2.jpg" class="mr-3 rounded-circle" width="50" alt="User review">
-                                <div class="media-body">
-                                    <div class="d-flex justify-content-between">
-                                        <h6 class="mt-0 mb-1">Sarah K.</h6>
-                                        <small class="text-muted">1 week ago</small>
-                                    </div>
-                                    <div class="product-rating mb-2">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                    <p>Great phone overall, but the battery could last longer. Bwanikaz offered excellent customer service when I had questions about the warranty.</p>
+                                    <p>This phone is absolutely amazing! The camera quality is outstanding.</p>
                                 </div>
                             </div>
                             <form>
@@ -617,20 +569,6 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit Review</button>
                             </form>
-                        </div>
-                        <div class="tab-pane fade" id="warranty" role="tabpanel">
-                            <h5>Warranty Information</h5>
-                            <p>Bwanikaz Gadget Collections provides a 1-year warranty on all Apple products. This warranty covers manufacturing defects but does not cover accidental damage or liquid damage.</p>
-                            <p>To claim warranty service:</p>
-                            <ol>
-                                <li>Keep your original purchase receipt</li>
-                                <li>Contact our support team via WhatsApp at +256 751 045276</li>
-                                <li>Bring the device to our Kampala store for assessment</li>
-                            </ol>
-                            <p>For Apple's international warranty, please register your device on Apple's website using the serial number found in Settings > General > About.</p>
-                            <div class="alert alert-info">
-                                <i class="fas fa-info-circle mr-2"></i> We recommend purchasing our extended warranty plan for additional coverage against accidental damage.
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -704,9 +642,8 @@
             </div>
         </div>
     </section>
-    <!-- Product Detail End -->
 
-    <!-- Features Start (Same as Homepage) -->
+    <!-- Features (Same as Homepage) -->
     <section class="py-5 bg-primary text-white">
         <div class="container">
             <div class="row">
@@ -749,27 +686,21 @@
             </div>
         </div>
     </section>
-    <!-- Features End -->
 
-    <!-- Footer Start (Same as Homepage) -->
+    <!-- Footer (Same as Homepage) -->
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-5">
                     <h5 class="footer-title">Bwanikaz Gadget Collections</h5>
-                    <p class="mb-4">Your trusted source for premium smartphones, laptops, gaming consoles, and electronics accessories in Kampala. We offer authentic products with warranty and excellent customer service.</p>
-                    <p class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i>Kampala, Uganda</p>
-                    <p class="mb-2"><i class="fas fa-envelope mr-2"></i>brianryan848@gmail.com</p>
-                    <p class="mb-0"><i class="fas fa-phone-alt mr-2"></i>+256 751 045276</p>
+                    <p class="mb-4">Your trusted source for premium smartphones, laptops, gaming consoles, and electronics accessories in Kampala.</p>
+                    <p class="mb-2"><i class="fas fa-phone-alt mr-2"></i>+256 751 045276</p>
                 </div>
                 <div class="col-lg-2 col-md-6 mb-5">
                     <h5 class="footer-title">Quick Links</h5>
                     <div class="footer-links">
                         <a href="index.html">Home</a>
-                        <a href="shop.html">Our Shop</a>
-                        <a href="#">Shop Detail</a>
-                        <a href="#">Shopping Cart</a>
-                        <a href="#">Checkout</a>
+                        <a href="shop.html">Shop</a>
                         <a href="#">Contact Us</a>
                     </div>
                 </div>
@@ -778,10 +709,7 @@
                     <div class="footer-links">
                         <a href="#">My Account</a>
                         <a href="#">Order Tracking</a>
-                        <a href="#">Wishlist</a>
-                        <a href="#">Terms & Conditions</a>
-                        <a href="#">Returns & Exchanges</a>
-                        <a href="#">FAQs</a>
+                        <a href="#">Returns</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-5">
@@ -791,25 +719,15 @@
                     </a>
                     <div class="social-icons mt-3">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                    <h5 class="footer-title mt-4">Payment Methods</h5>
-                    <div class="d-flex flex-wrap">
-                        <img src="https://via.placeholder.com/40x25?text=MTN" alt="MTN Mobile Money" class="mr-2 mb-2">
-                        <img src="https://via.placeholder.com/40x25?text=Airtel" alt="Airtel Money" class="mr-2 mb-2">
-                        <img src="https://via.placeholder.com/40x25?text=VISA" alt="VISA" class="mr-2 mb-2">
-                        <img src="https://via.placeholder.com/40x25?text=Mastercard" alt="Mastercard" class="mr-2 mb-2">
                     </div>
                 </div>
             </div>
             <div class="footer-bottom text-center py-3">
-                <p class="mb-0">&copy; <a class="text-white" href="#">Bwanikaz Gadget Collections</a>. All Rights Reserved.</p>
+                <p class="mb-0">&copy; Bwanikaz Gadget Collections. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-    <!-- Footer End -->
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
@@ -817,72 +735,46 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Custom JavaScript -->
     <script>
-        // Toggle category dropdown
-        document.getElementById('categoryToggle').addEventListener('click', function() {
-            document.getElementById('categoryDropdown').classList.toggle('show');
-        });
-        
-        // Close the dropdown if clicked outside
-        window.addEventListener('click', function(event) {
-            if (!event.target.matches('#categoryToggle') && !event.target.closest('#categoryToggle')) {
-                var dropdown = document.getElementById('categoryDropdown');
-                if (dropdown.classList.contains('show')) {
-                    dropdown.classList.remove('show');
-                }
-            }
-        });
-        
-        // Change product image when thumbnail is clicked
+        // Image Gallery Functionality
         function changeImage(element) {
             document.getElementById('mainImage').src = element.src;
         }
-        
-        // Quantity selector functionality
+
+        // Quantity Selector
         document.querySelector('.quantity-btn.minus').addEventListener('click', function() {
             let input = document.querySelector('.quantity-input');
-            if (input.value > 1) {
-                input.value--;
-            }
+            if (input.value > 1) input.value--;
         });
         
         document.querySelector('.quantity-btn.plus').addEventListener('click', function() {
             let input = document.querySelector('.quantity-input');
             input.value++;
         });
-        
-        // Star rating for reviews
+
+        // Star Rating for Reviews
         document.querySelectorAll('.rating-stars i').forEach(star => {
             star.addEventListener('click', function() {
                 const rating = this.getAttribute('data-rating');
                 const stars = document.querySelectorAll('.rating-stars i');
                 stars.forEach((s, index) => {
-                    if (index < rating) {
-                        s.classList.remove('far');
-                        s.classList.add('fas');
-                    } else {
-                        s.classList.remove('fas');
-                        s.classList.add('far');
-                    }
+                    s.classList.toggle('fas', index < rating);
+                    s.classList.toggle('far', index >= rating);
                 });
             });
         });
-        
-        // Back to top button
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 300) {
-                $('.back-to-top').fadeIn('slow');
-            } else {
-                $('.back-to-top').fadeOut('slow');
-            }
+
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            backToTop.style.display = (window.scrollY > 300) ? 'block' : 'none';
         });
-        $('.back-to-top').click(function () {
-            $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-            return false;
+        
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
         });
     </script>
 </body>
