@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title>iPhone 15 Pro 128GB | Bwanikaz Gadget Collections | Kampala</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Buy genuine iPhone 15 Pro 128GB in Kampala at the best price. Free delivery, warranty, and flexible payment options at Bwanikaz Gadget Collections.">
-    <meta name="keywords" content="iPhone 15 Pro Uganda, buy iPhone Kampala, Apple phones Uganda, best smartphone deals Kampala">
+    <title>iPhone 15 Pro 128GB | Bwanikaz Gadget Collections</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Buy iPhone 15 Pro 128GB in Kampala at the best price. Authentic Apple product with warranty." name="description">
+    <meta content="iPhone 15 Uganda, Apple phones Kampala, buy iPhone 15 Pro, smartphones Uganda, latest phones" name="keywords">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -18,6 +18,10 @@
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
     <style>
@@ -27,261 +31,543 @@
             --dark: #212529;
             --light: #f8f9fa;
             --danger: #dc3545;
+            --warning: #ffc107;
             --success: #198754;
+            --info: #0dcaf0;
         }
-
-        .product-detail {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background-color: #f5f5f5;
         }
-
-        /* Product Gallery */
-        .product-gallery {
+        
+        .navbar-dark .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 10px 15px;
+        }
+        
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #fff;
+        }
+        
+        .bg-primary {
+            background-color: var(--primary) !important;
+        }
+        
+        .text-primary {
+            color: var(--primary) !important;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: #fff;
+        }
+        
+        .top-bar {
+            background-color: var(--dark);
+            color: #fff;
+            font-size: 12px;
+            padding: 5px 0;
+        }
+        
+        .top-bar a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .main-header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 24px;
+        }
+        
+        .logo span:first-child {
+            color: var(--dark);
+        }
+        
+        .logo span:last-child {
+            color: var(--primary);
+        }
+        
+        .search-box {
+            width: 100%;
             position: relative;
         }
-
+        
+        .search-box input {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            outline: none;
+        }
+        
+        .search-box button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 0 15px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .category-menu {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .category-menu i {
+            margin-right: 10px;
+        }
+        
+        .category-dropdown {
+            position: absolute;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: none;
+        }
+        
+        .category-dropdown.show {
+            display: block;
+        }
+        
+        .category-dropdown a {
+            display: block;
+            padding: 10px 15px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .category-dropdown a:hover {
+            background-color: #f9f9f9;
+            color: var(--primary);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .section-title:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 50px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        /* Product Detail Styles */
+        .product-detail {
+            background: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .product-images {
+            position: relative;
+        }
+        
         .main-image {
             width: 100%;
             height: 400px;
             object-fit: contain;
             background: #f9f9f9;
-            padding: 30px;
-            border-bottom: 1px solid #eee;
+            border-radius: 4px;
+            margin-bottom: 15px;
         }
-
-        .thumbnail-container {
+        
+        .thumbnail-images {
             display: flex;
             gap: 10px;
-            padding: 15px;
-            overflow-x: auto;
         }
-
+        
         .thumbnail {
             width: 80px;
             height: 80px;
-            object-fit: cover;
+            object-fit: contain;
             border: 1px solid #ddd;
             border-radius: 4px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
-
+        
         .thumbnail:hover {
             border-color: var(--primary);
         }
-
-        /* Product Badge */
+        
         .product-badge {
             position: absolute;
-            top: 15px;
-            left: 15px;
-            background: var(--primary);
-            color: white;
+            top: 10px;
+            left: 10px;
+            background: var(--danger);
+            color: #fff;
             padding: 5px 10px;
-            border-radius: 4px;
+            border-radius: 3px;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 500;
         }
-
-        /* Product Info */
-        .product-info {
-            padding: 30px;
-        }
-
+        
         .product-title {
             font-size: 24px;
-            font-weight: 700;
+            font-weight: 600;
             margin-bottom: 10px;
-            color: var(--dark);
         }
-
-        .product-meta {
-            display: flex;
-            align-items: center;
+        
+        .product-rating {
+            color: var(--warning);
             margin-bottom: 15px;
         }
-
-        .product-rating {
-            color: var(--primary);
-            margin-right: 15px;
-        }
-
-        .product-review-count {
-            color: var(--secondary);
-            font-size: 14px;
-        }
-
+        
         .product-price {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 15px;
         }
-
+        
         .product-old-price {
             font-size: 18px;
             color: #999;
             text-decoration: line-through;
             margin-left: 10px;
         }
-
+        
         .product-discount {
             color: var(--danger);
-            font-weight: 600;
+            font-weight: 500;
             margin-left: 10px;
         }
-
-        .product-stock {
-            color: var(--success);
-            font-weight: 600;
+        
+        .product-meta {
             margin-bottom: 20px;
         }
-
-        /* Action Buttons */
-        .product-actions {
+        
+        .product-meta span {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        .product-meta strong {
+            font-weight: 500;
+        }
+        
+        .product-options {
+            margin-bottom: 20px;
+        }
+        
+        .option-title {
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .color-options, .storage-options {
             display: flex;
             gap: 10px;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
         }
-
+        
+        .color-option, .storage-option {
+            border: 1px solid #ddd;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .color-option:hover, .storage-option:hover {
+            border-color: var(--primary);
+        }
+        
+        .color-option.active, .storage-option.active {
+            border-color: var(--primary);
+            background-color: rgba(13, 110, 253, 0.1);
+        }
+        
         .quantity-selector {
             display: flex;
             align-items: center;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            overflow: hidden;
+            margin-bottom: 20px;
         }
-
+        
         .quantity-btn {
-            background: #f8f9fa;
-            border: none;
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
         }
-
+        
         .quantity-input {
             width: 50px;
-            height: 40px;
+            height: 30px;
             text-align: center;
-            border: none;
-            border-left: 1px solid #ddd;
-            border-right: 1px solid #ddd;
-        }
-
-        .btn-cart {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 0 25px;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .btn-cart:hover {
-            background: #0b5ed7;
-        }
-
-        .btn-wishlist {
-            background: white;
-            color: var(--dark);
             border: 1px solid #ddd;
+            border-left: none;
+            border-right: none;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .btn-wishlist {
             width: 40px;
             height: 40px;
+            border: 1px solid #ddd;
             border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--danger);
             cursor: pointer;
-            transition: all 0.3s;
         }
-
+        
         .btn-wishlist:hover {
-            color: var(--primary);
-            border-color: var(--primary);
+            background: #f8f9fa;
         }
-
-        /* Product Tabs */
+        
         .product-tabs {
-            margin-top: 40px;
+            margin-top: 30px;
         }
-
-        .nav-tabs {
+        
+        .nav-tabs .nav-link {
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .nav-tabs .nav-link.active {
+            color: var(--primary);
             border-bottom: 2px solid var(--primary);
         }
-
-        .nav-link {
-            color: var(--secondary);
-            font-weight: 500;
-            border: none;
-            padding: 12px 20px;
-        }
-
-        .nav-link.active {
-            color: var(--primary);
-            background: rgba(13, 110, 253, 0.05);
-            border-bottom: 3px solid var(--primary);
-        }
-
+        
         .tab-content {
-            padding: 25px;
-            border: 1px solid #eee;
-            border-top: none;
-            border-radius: 0 0 8px 8px;
-        }
-
-        /* Related Products */
-        .related-products {
-            margin-top: 60px;
-        }
-
-        .section-title {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 30px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .section-title:after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--primary);
-        }
-
-        .related-products .product-img {
-            height: 150px;
             padding: 20px;
+            border: 1px solid #dee2e6;
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+        }
+        
+        .specifications-table {
+            width: 100%;
+        }
+        
+        .specifications-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .specifications-table td {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .specifications-table td:first-child {
+            font-weight: 500;
+            width: 30%;
+        }
+        
+        .review-card {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .review-card:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .review-author {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .review-date {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 5px;
+        }
+        
+        .related-products .product-card {
+            background: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+        
+        .related-products .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .related-products .product-img {
+            position: relative;
+            overflow: hidden;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background: #f9f9f9;
         }
-
-        .related-products .product-title {
-            font-size: 15px;
-            height: 40px;
-            overflow: hidden;
+        
+        .related-products .product-img img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
         }
-
-        /* Responsive Fixes */
-        @media (max-width: 768px) {
+        
+        .related-products .product-info {
+            padding: 15px;
+        }
+        
+        .related-products .product-title {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #333;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 40px;
+        }
+        
+        .related-products .product-price {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        
+        .footer {
+            background: var(--dark);
+            color: #fff;
+            padding: 30px 0 0;
+        }
+        
+        .footer-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .footer-links a {
+            display: block;
+            color: #ddd;
+            margin-bottom: 10px;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: #fff;
+        }
+        
+        .footer-bottom {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px 0;
+            margin-top: 30px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            margin-right: 10px;
+        }
+        
+        .social-icons a:hover {
+            background: var(--primary);
+        }
+        
+        .whatsapp-btn {
+            background: #25D366;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 4px;
+            display: block;
+            text-align: center;
+            margin-bottom: 15px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            color: #fff;
+        }
+        
+        @media (max-width: 767px) {
             .main-image {
                 height: 300px;
-                padding: 15px;
             }
             
-            .product-actions {
+            .thumbnail {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .product-title {
+                font-size: 20px;
+            }
+            
+            .action-buttons {
                 flex-direction: column;
             }
             
-            .quantity-selector {
+            .action-buttons .btn {
                 width: 100%;
-                justify-content: center;
             }
             
-            .btn-cart {
+            .btn-wishlist {
                 width: 100%;
             }
         }
@@ -289,7 +575,7 @@
 </head>
 
 <body>
-    <!-- Top Bar (Same as Homepage) -->
+    <!-- Top Bar Start -->
     <div class="top-bar">
         <div class="container">
             <div class="row align-items-center">
@@ -309,14 +595,16 @@
             </div>
         </div>
     </div>
+    <!-- Top Bar End -->
 
-    <!-- Header (Same as Homepage) -->
+    <!-- Main Header Start -->
     <header class="main-header py-2">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-12 mb-3 mb-lg-0">
-                    <a href="index.html" class="d-flex align-items-center text-decoration-none">
-                        <img src="bwanikaz-gadgets-kampala-logo.jpg" alt="Bwanikaz Gadget Collections | Best Electronics Store in Kampala" class="logo-img" width="180" height="50">
+                    <a href="index.html" class="logo text-decoration-none">
+                        <span class="h1 text-uppercase text-dark px-2">Bwanikaz</span>
+                        <span class="h1 text-uppercase text-primary px-2">Gadgets</span>
                     </a>
                 </div>
                 <div class="col-lg-6 col-md-8 mb-3 mb-md-0">
@@ -331,15 +619,16 @@
                         <a href="#" class="btn btn-outline-primary mr-2"><i class="far fa-heart"></i></a>
                         <a href="#" class="btn btn-outline-primary">
                             <i class="fas fa-shopping-cart"></i>
-                            <span class="badge badge-danger">3</span>
+                            <span class="badge badge-danger">0</span>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+    <!-- Main Header End -->
 
-    <!-- Navigation (Same as Homepage) -->
+    <!-- Navigation Start -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-2">
         <div class="container">
             <div class="category-menu d-flex align-items-center" id="categoryToggle">
@@ -381,212 +670,277 @@
             </div>
         </div>
     </nav>
+    <!-- Navigation End -->
 
-    <!-- Breadcrumb -->
+    <!-- Breadcrumb Start -->
     <div class="container py-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="shop.html">Shop</a></li>
-                <li class="breadcrumb-item"><a href="#">Smartphones</a></li>
+                <li class="breadcrumb-item"><a href="shop.html">Smartphones</a></li>
+                <li class="breadcrumb-item"><a href="#">Apple</a></li>
                 <li class="breadcrumb-item active" aria-current="page">iPhone 15 Pro 128GB</li>
             </ol>
         </nav>
     </div>
+    <!-- Breadcrumb End -->
 
-    <!-- Product Detail -->
+    <!-- Product Detail Start -->
     <section class="py-3">
         <div class="container">
             <div class="product-detail">
                 <div class="row">
-                    <div class="col-lg-6">
-                        <div class="product-gallery">
-                            <span class="product-badge">-10% OFF</span>
-                            <img src="img/iphone-15-large.jpg" alt="iPhone 15 Pro 128GB - Buy in Kampala" class="main-image" id="mainImage">
-                            <div class="thumbnail-container">
-                                <img src="img/iphone-15-1.jpg" alt="iPhone 15 Pro front view" class="thumbnail" onclick="changeImage(this)">
-                                <img src="img/iphone-15-2.jpg" alt="iPhone 15 Pro side view" class="thumbnail" onclick="changeImage(this)">
-                                <img src="img/iphone-15-3.jpg" alt="iPhone 15 Pro back view" class="thumbnail" onclick="changeImage(this)">
-                                <img src="img/iphone-15-4.jpg" alt="iPhone 15 Pro camera closeup" class="thumbnail" onclick="changeImage(this)">
+                    <div class="col-lg-5">
+                        <div class="product-images">
+                            <span class="product-badge">-10%</span>
+                            <img src="img/iphone-15-detail.jpg" alt="iPhone 15 Pro 128GB" class="main-image img-fluid">
+                            <div class="thumbnail-images">
+                                <img src="img/iphone-15-detail-1.jpg" alt="iPhone 15 Pro Front View" class="thumbnail img-fluid">
+                                <img src="img/iphone-15-detail-2.jpg" alt="iPhone 15 Pro Side View" class="thumbnail img-fluid">
+                                <img src="img/iphone-15-detail-3.jpg" alt="iPhone 15 Pro Back View" class="thumbnail img-fluid">
+                                <img src="img/iphone-15-detail-4.jpg" alt="iPhone 15 Pro Box" class="thumbnail img-fluid">
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="product-info">
-                            <h1 class="product-title">iPhone 15 Pro 128GB (Titanium Black)</h1>
-                            <div class="product-meta">
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <div class="product-review-count">(24 reviews)</div>
-                            </div>
-                            <div class="product-price">
-                                UGX 5,200,000 <span class="product-old-price">UGX 5,500,000</span>
-                                <span class="product-discount">Save UGX 300,000</span>
-                            </div>
-                            <div class="product-stock">
-                                <i class="fas fa-check-circle"></i> In Stock (5 available)
-                            </div>
-                            <p class="mb-4">The iPhone 15 Pro features a durable titanium design, the incredible A17 Pro chip for next-level performance, and an advanced camera system for stunning photos and videos.</p>
-                            
-                            <div class="product-actions">
-                                <div class="quantity-selector">
-                                    <button class="quantity-btn minus">-</button>
-                                    <input type="number" class="quantity-input" value="1" min="1">
-                                    <button class="quantity-btn plus">+</button>
-                                </div>
-                                <button class="btn-cart">
-                                    <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
-                                </button>
-                                <button class="btn-wishlist">
-                                    <i class="far fa-heart"></i>
-                                </button>
-                            </div>
-                            
-                            <div class="product-meta-info">
-                                <div class="meta-item">
-                                    <span class="meta-label">Brand:</span>
-                                    <span class="meta-value">Apple</span>
-                                </div>
-                                <div class="meta-item">
-                                    <span class="meta-label">Model:</span>
-                                    <span class="meta-value">iPhone 15 Pro</span>
-                                </div>
-                                <div class="meta-item">
-                                    <span class="meta-label">Storage:</span>
-                                    <span class="meta-value">128GB</span>
-                                </div>
-                                <div class="meta-item">
-                                    <span class="meta-label">Color:</span>
-                                    <span class="meta-value">Titanium Black</span>
-                                </div>
-                                <div class="meta-item">
-                                    <span class="meta-label">Warranty:</span>
-                                    <span class="meta-value">1 Year Apple Warranty</span>
-                                </div>
+                    <div class="col-lg-7">
+                        <h1 class="product-title">iPhone 15 Pro 128GB - Titanium</h1>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="ml-2">18 Reviews</span>
+                        </div>
+                        
+                        <div class="product-price">
+                            UGX 5,200,000
+                            <span class="product-old-price">UGX 5,500,000</span>
+                            <span class="product-discount">Save 10%</span>
+                        </div>
+                        
+                        <div class="product-meta">
+                            <span><strong>Availability:</strong> In Stock (5 units)</span>
+                            <span><strong>Brand:</strong> Apple</span>
+                            <span><strong>Product Code:</strong> IP15P-128-TI</span>
+                            <span><strong>Warranty:</strong> 1 Year Official Warranty</span>
+                        </div>
+                        
+                        <p>The iPhone 15 Pro represents the pinnacle of Apple's smartphone technology. Featuring a durable titanium design, the powerful A17 Pro chip, and an advanced camera system, this phone delivers exceptional performance and photography capabilities.</p>
+                        
+                        <div class="product-options">
+                            <h5 class="option-title">Color:</h5>
+                            <div class="color-options">
+                                <div class="color-option active">Titanium</div>
+                                <div class="color-option">Black Titanium</div>
+                                <div class="color-option">White Titanium</div>
+                                <div class="color-option">Blue Titanium</div>
                             </div>
                             
-                            <div class="share-buttons mt-4">
-                                <span class="mr-2">Share:</span>
-                                <a href="#" class="text-primary mr-2"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="text-info mr-2"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="text-danger mr-2"><i class="fab fa-instagram"></i></a>
-                                <a href="#" class="text-success"><i class="fab fa-whatsapp"></i></a>
+                            <h5 class="option-title">Storage:</h5>
+                            <div class="storage-options">
+                                <div class="storage-option active">128GB</div>
+                                <div class="storage-option">256GB</div>
+                                <div class="storage-option">512GB</div>
+                                <div class="storage-option">1TB</div>
                             </div>
+                        </div>
+                        
+                        <div class="quantity-selector">
+                            <span class="mr-2"><strong>Quantity:</strong></span>
+                            <button class="quantity-btn minus">-</button>
+                            <input type="text" class="quantity-input" value="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button class="btn btn-primary btn-lg"><i class="fas fa-shopping-cart mr-2"></i> Add to Cart</button>
+                            <button class="btn btn-wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                        
+                        <a href="https://wa.me/256751045276" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp mr-2"></i> Buy Now on WhatsApp
+                        </a>
+                        
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-shield-alt text-primary mr-2"></i>
+                            <small>Authentic Apple product with 1-year warranty. 7-day return policy.</small>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Product Tabs -->
-                <div class="product-tabs">
+                <div class="product-tabs mt-5">
                     <ul class="nav nav-tabs" id="productTabs" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab">Description</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="specs-tab" data-toggle="tab" href="#specs" role="tab">Specifications</a>
+                            <a class="nav-link" id="specifications-tab" data-toggle="tab" href="#specifications" role="tab">Specifications</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab">Reviews (24)</a>
+                            <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab">Reviews (18)</a>
                         </li>
                     </ul>
                     <div class="tab-content" id="productTabsContent">
                         <div class="tab-pane fade show active" id="description" role="tabpanel">
                             <h5>Product Description</h5>
-                            <p>The iPhone 15 Pro represents a revolutionary leap in smartphone technology. Crafted from aerospace-grade titanium, it's our lightest Pro model ever. The 6.1-inch Super Retina XDR display with ProMotion is perfect for viewing HDR content and playing graphics-intensive games.</p>
+                            <p>The iPhone 15 Pro is Apple's most advanced smartphone, featuring a sleek titanium design that's both lightweight and durable. The 6.1-inch Super Retina XDR display with ProMotion technology delivers stunning visuals with adaptive refresh rates up to 120Hz.</p>
+                            
+                            <p>Powered by the revolutionary A17 Pro chip, the iPhone 15 Pro offers unparalleled performance for gaming, photography, and productivity. The advanced camera system includes a 48MP main camera with 2x telephoto, 12MP ultra-wide, and 12MP telephoto lenses, enabling professional-quality photography and videography.</p>
+                            
+                            <h5 class="mt-4">Key Features</h5>
                             <ul>
-                                <li>A17 Pro chip with 6-core CPU and 6-core GPU</li>
-                                <li>Pro camera system with 48MP Main, 12MP Ultra Wide, and 12MP Telephoto</li>
                                 <li>6.1-inch Super Retina XDR display with ProMotion</li>
-                                <li>Titanium design with textured matte glass back</li>
-                                <li>USB-C for faster transfers and charging</li>
+                                <li>A17 Pro chip with 6-core CPU and 5-core GPU</li>
+                                <li>Pro camera system: 48MP Main, 12MP Ultra Wide, 12MP Telephoto</li>
+                                <li>Cinematic mode now in 4K HDR at 30 fps</li>
+                                <li>Action mode for smooth, steady videos</li>
+                                <li>Emergency SOS via satellite and Crash Detection</li>
+                                <li>All-day battery life and fast charging</li>
+                                <li>USB-C connector for charging and accessories</li>
+                                <li>iOS 17 with powerful new features</li>
+                            </ul>
+                            
+                            <h5 class="mt-4">What's in the Box</h5>
+                            <ul>
+                                <li>iPhone 15 Pro</li>
+                                <li>USB-C Charge Cable (1m)</li>
+                                <li>Documentation</li>
                             </ul>
                         </div>
-                        <div class="tab-pane fade" id="specs" role="tabpanel">
-                            <h5>Technical Specifications</h5>
-                            <table class="table table-bordered">
-                                <tbody>
-                                    <tr>
-                                        <th>Display</th>
-                                        <td>6.1-inch Super Retina XDR, 2556x1179 resolution</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Chip</th>
-                                        <td>A17 Pro chip with 6-core CPU</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Camera</th>
-                                        <td>48MP Main, 12MP Ultra Wide, 12MP Telephoto</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Battery</th>
-                                        <td>Up to 23 hours video playback</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Water Resistance</th>
-                                        <td>IP68 (6 meters for 30 minutes)</td>
-                                    </tr>
-                                </tbody>
+                        
+                        <div class="tab-pane fade" id="specifications" role="tabpanel">
+                            <table class="specifications-table">
+                                <tr>
+                                    <td>Brand</td>
+                                    <td>Apple</td>
+                                </tr>
+                                <tr>
+                                    <td>Model</td>
+                                    <td>iPhone 15 Pro</td>
+                                </tr>
+                                <tr>
+                                    <td>Display</td>
+                                    <td>6.1-inch Super Retina XDR, 2556x1179 resolution, 460ppi</td>
+                                </tr>
+                                <tr>
+                                    <td>Processor</td>
+                                    <td>A17 Pro chip with 6-core CPU, 5-core GPU, 16-core Neural Engine</td>
+                                </tr>
+                                <tr>
+                                    <td>Storage</td>
+                                    <td>128GB</td>
+                                </tr>
+                                <tr>
+                                    <td>Rear Cameras</td>
+                                    <td>48MP main (f/1.78), 12MP ultra wide (f/2.2), 12MP telephoto (f/2.8)</td>
+                                </tr>
+                                <tr>
+                                    <td>Front Camera</td>
+                                    <td>12MP TrueDepth (f/1.9)</td>
+                                </tr>
+                                <tr>
+                                    <td>Video Recording</td>
+                                    <td>4K at 24/25/30/60 fps, 1080p at 25/30/60/120/240 fps</td>
+                                </tr>
+                                <tr>
+                                    <td>Battery</td>
+                                    <td>Up to 23 hours video playback, Fast charge capable</td>
+                                </tr>
+                                <tr>
+                                    <td>Operating System</td>
+                                    <td>iOS 17</td>
+                                </tr>
+                                <tr>
+                                    <td>Dimensions</td>
+                                    <td>146.6 x 70.6 x 8.25 mm</td>
+                                </tr>
+                                <tr>
+                                    <td>Weight</td>
+                                    <td>187 grams</td>
+                                </tr>
+                                <tr>
+                                    <td>Connectivity</td>
+                                    <td>5G, Wi-Fi 6E, Bluetooth 5.3, NFC, USB-C</td>
+                                </tr>
+                                <tr>
+                                    <td>Colors</td>
+                                    <td>Titanium, Black Titanium, White Titanium, Blue Titanium</td>
+                                </tr>
+                                <tr>
+                                    <td>Water Resistance</td>
+                                    <td>IP68 (up to 6m for 30 minutes)</td>
+                                </tr>
                             </table>
                         </div>
+                        
                         <div class="tab-pane fade" id="reviews" role="tabpanel">
-                            <div class="media mb-4">
-                                <img src="img/user-1.jpg" class="mr-3 rounded-circle" width="50" alt="User review">
-                                <div class="media-body">
-                                    <div class="d-flex justify-content-between">
-                                        <h6 class="mt-0 mb-1">John M.</h6>
-                                        <small class="text-muted">2 days ago</small>
-                                    </div>
-                                    <div class="product-rating mb-2">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <p>This phone is absolutely amazing! The camera quality is outstanding.</p>
+                            <div class="review-card">
+                                <div class="review-author">Brian K.</div>
+                                <div class="review-date">October 15, 2023</div>
+                                <div class="review-rating">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
                                 </div>
+                                <p>Absolutely love my new iPhone 15 Pro! The titanium finish feels premium and the camera is incredible. Battery life lasts me all day with heavy use.</p>
                             </div>
-                            <form>
-                                <h6>Write a Review</h6>
-                                <div class="form-group">
-                                    <label>Your Rating</label>
-                                    <div class="rating-stars">
-                                        <i class="far fa-star" data-rating="1"></i>
-                                        <i class="far fa-star" data-rating="2"></i>
-                                        <i class="far fa-star" data-rating="3"></i>
-                                        <i class="far fa-star" data-rating="4"></i>
-                                        <i class="far fa-star" data-rating="5"></i>
-                                    </div>
+                            
+                            <div class="review-card">
+                                <div class="review-author">Sarah M.</div>
+                                <div class="review-date">October 10, 2023</div>
+                                <div class="review-rating">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star-half-alt text-warning"></i>
                                 </div>
-                                <div class="form-group">
-                                    <label>Your Review</label>
-                                    <textarea class="form-control" rows="3"></textarea>
+                                <p>Upgraded from iPhone 12 and the difference is night and day. The 120Hz display makes everything so smooth. Only complaint is the price, but you get what you pay for.</p>
+                            </div>
+                            
+                            <div class="review-card">
+                                <div class="review-author">David R.</div>
+                                <div class="review-date">October 5, 2023</div>
+                                <div class="review-rating">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="far fa-star text-warning"></i>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit Review</button>
-                            </form>
+                                <p>Great phone overall, but the battery could be better. Camera is amazing though, especially the night mode. USB-C is a welcome change.</p>
+                            </div>
+                            
+                            <button class="btn btn-outline-primary mt-3">Write a Review</button>
                         </div>
                     </div>
                 </div>
             </div>
             
             <!-- Related Products -->
-            <div class="related-products">
-                <h3 class="section-title">You May Also Like</h3>
+            <div class="related-products mt-5">
+                <h2 class="section-title">You May Also Like</h2>
                 <div class="row">
                     <div class="col-6 col-md-3 mb-4">
                         <div class="product-card">
                             <div class="product-img">
                                 <span class="product-badge">-6%</span>
-                                <img src="img/samsung-s23.webp" alt="Samsung S23 Ultra">
+                                <img src="img/samsung-s23.webp" alt="Samsung S23 Uganda">
                             </div>
                             <div class="product-info">
                                 <h5 class="product-title">Samsung Galaxy S23 Ultra</h5>
                                 <div class="product-price">UGX 4,800,000 <span class="product-old-price">UGX 5,100,000</span></div>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <small>(14)</small>
+                                </div>
                                 <div class="product-actions">
                                     <button><i class="fas fa-shopping-cart"></i> Add to Cart</button>
                                 </div>
@@ -597,11 +951,19 @@
                         <div class="product-card">
                             <div class="product-img">
                                 <span class="product-badge">New</span>
-                                <img src="img/airpods-pro.png" alt="AirPods Pro 2">
+                                <img src="img/iphone-14.jpeg" alt="iPhone 14 Uganda">
                             </div>
                             <div class="product-info">
-                                <h5 class="product-title">AirPods Pro (2nd Gen)</h5>
-                                <div class="product-price">UGX 1,100,000</div>
+                                <h5 class="product-title">iPhone 14 Pro Max 128GB</h5>
+                                <div class="product-price">UGX 4,500,000</div>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <small>(22)</small>
+                                </div>
                                 <div class="product-actions">
                                     <button><i class="fas fa-shopping-cart"></i> Add to Cart</button>
                                 </div>
@@ -612,11 +974,19 @@
                         <div class="product-card">
                             <div class="product-img">
                                 <span class="product-badge">-8%</span>
-                                <img src="img/macbook-air.jpeg" alt="MacBook Air M1">
+                                <img src="img/google-pixel.jpeg" alt="Google Pixel Uganda">
                             </div>
                             <div class="product-info">
-                                <h5 class="product-title">MacBook Air M1</h5>
-                                <div class="product-price">UGX 4,500,000 <span class="product-old-price">UGX 4,900,000</span></div>
+                                <h5 class="product-title">Google Pixel 7 Pro</h5>
+                                <div class="product-price">UGX 3,200,000 <span class="product-old-price">UGX 3,500,000</span></div>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <small>(9)</small>
+                                </div>
                                 <div class="product-actions">
                                     <button><i class="fas fa-shopping-cart"></i> Add to Cart</button>
                                 </div>
@@ -626,12 +996,20 @@
                     <div class="col-6 col-md-3 mb-4">
                         <div class="product-card">
                             <div class="product-img">
-                                <span class="product-badge">New</span>
-                                <img src="img/galaxy-watch.png" alt="Galaxy Watch 5">
+                                <span class="product-badge">-5%</span>
+                                <img src="img/oneplus-11.jpeg" alt="OnePlus 11 Uganda">
                             </div>
                             <div class="product-info">
-                                <h5 class="product-title">Galaxy Watch 5</h5>
-                                <div class="product-price">UGX 1,300,000</div>
+                                <h5 class="product-title">OnePlus 11 5G</h5>
+                                <div class="product-price">UGX 3,000,000 <span class="product-old-price">UGX 3,150,000</span></div>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <small>(11)</small>
+                                </div>
                                 <div class="product-actions">
                                     <button><i class="fas fa-shopping-cart"></i> Add to Cart</button>
                                 </div>
@@ -642,65 +1020,27 @@
             </div>
         </div>
     </section>
+    <!-- Product Detail End -->
 
-    <!-- Features (Same as Homepage) -->
-    <section class="py-5 bg-primary text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-6 mb-4 mb-md-0">
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-check-circle fa-2x mr-3"></i>
-                        <div>
-                            <h5 class="mb-1">Authentic Products</h5>
-                            <p class="mb-0 small">100% genuine with warranty</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6 mb-4 mb-md-0">
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-truck fa-2x mr-3"></i>
-                        <div>
-                            <h5 class="mb-1">Kampala Delivery</h5>
-                            <p class="mb-0 small">Fast & reliable shipping</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6 mb-4 mb-md-0">
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-exchange-alt fa-2x mr-3"></i>
-                        <div>
-                            <h5 class="mb-1">7-Day Returns</h5>
-                            <p class="mb-0 small">Easy return policy</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-headset fa-2x mr-3"></i>
-                        <div>
-                            <h5 class="mb-1">24/7 Support</h5>
-                            <p class="mb-0 small">Dedicated customer service</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer (Same as Homepage) -->
+    <!-- Footer Start -->
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-5">
                     <h5 class="footer-title">Bwanikaz Gadget Collections</h5>
-                    <p class="mb-4">Your trusted source for premium smartphones, laptops, gaming consoles, and electronics accessories in Kampala.</p>
-                    <p class="mb-2"><i class="fas fa-phone-alt mr-2"></i>+256 751 045276</p>
+                    <p class="mb-4">Your trusted source for premium smartphones, laptops, gaming consoles, and electronics accessories in Kampala. We offer authentic products with warranty and excellent customer service.</p>
+                    <p class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i>Kampala, Uganda</p>
+                    <p class="mb-2"><i class="fas fa-envelope mr-2"></i>brianryan848@gmail.com</p>
+                    <p class="mb-0"><i class="fas fa-phone-alt mr-2"></i>+256 751 045276</p>
                 </div>
                 <div class="col-lg-2 col-md-6 mb-5">
                     <h5 class="footer-title">Quick Links</h5>
                     <div class="footer-links">
                         <a href="index.html">Home</a>
-                        <a href="shop.html">Shop</a>
+                        <a href="shop.html">Our Shop</a>
+                        <a href="#">Shop Detail</a>
+                        <a href="#">Shopping Cart</a>
+                        <a href="#">Checkout</a>
                         <a href="#">Contact Us</a>
                     </div>
                 </div>
@@ -709,7 +1049,10 @@
                     <div class="footer-links">
                         <a href="#">My Account</a>
                         <a href="#">Order Tracking</a>
-                        <a href="#">Returns</a>
+                        <a href="#">Wishlist</a>
+                        <a href="#">Terms & Conditions</a>
+                        <a href="#">Returns & Exchanges</a>
+                        <a href="#">FAQs</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-5">
@@ -719,15 +1062,25 @@
                     </a>
                     <div class="social-icons mt-3">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    <h5 class="footer-title mt-4">Payment Methods</h5>
+                    <div class="d-flex flex-wrap">
+                        <img src="https://via.placeholder.com/40x25?text=MTN" alt="MTN Mobile Money" class="mr-2 mb-2">
+                        <img src="https://via.placeholder.com/40x25?text=Airtel" alt="Airtel Money" class="mr-2 mb-2">
+                        <img src="https://via.placeholder.com/40x25?text=VISA" alt="VISA" class="mr-2 mb-2">
+                        <img src="https://via.placeholder.com/40x25?text=Mastercard" alt="Mastercard" class="mr-2 mb-2">
                     </div>
                 </div>
             </div>
             <div class="footer-bottom text-center py-3">
-                <p class="mb-0">&copy; Bwanikaz Gadget Collections. All Rights Reserved.</p>
+                <p class="mb-0">&copy; <a class="text-white" href="#">Bwanikaz Gadget Collections</a>. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
+    <!-- Footer End -->
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
@@ -735,46 +1088,76 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Custom JavaScript -->
     <script>
-        // Image Gallery Functionality
-        function changeImage(element) {
-            document.getElementById('mainImage').src = element.src;
-        }
-
-        // Quantity Selector
+        // Toggle category dropdown
+        document.getElementById('categoryToggle').addEventListener('click', function() {
+            document.getElementById('categoryDropdown').classList.toggle('show');
+        });
+        
+        // Close the dropdown if clicked outside
+        window.addEventListener('click', function(event) {
+            if (!event.target.matches('#categoryToggle') && !event.target.closest('#categoryToggle')) {
+                var dropdown = document.getElementById('categoryDropdown');
+                if (dropdown.classList.contains('show')) {
+                    dropdown.classList.remove('show');
+                }
+            }
+        });
+        
+        // Product image thumbnail click handler
+        document.querySelectorAll('.thumbnail').forEach(thumb => {
+            thumb.addEventListener('click', function() {
+                const mainImg = document.querySelector('.main-image');
+                mainImg.src = this.src;
+            });
+        });
+        
+        // Color option selection
+        document.querySelectorAll('.color-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        
+        // Storage option selection
+        document.querySelectorAll('.storage-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.storage-option').forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        
+        // Quantity selector
         document.querySelector('.quantity-btn.minus').addEventListener('click', function() {
-            let input = document.querySelector('.quantity-input');
-            if (input.value > 1) input.value--;
+            const input = document.querySelector('.quantity-input');
+            let value = parseInt(input.value);
+            if (value > 1) {
+                input.value = value - 1;
+            }
         });
         
         document.querySelector('.quantity-btn.plus').addEventListener('click', function() {
-            let input = document.querySelector('.quantity-input');
-            input.value++;
-        });
-
-        // Star Rating for Reviews
-        document.querySelectorAll('.rating-stars i').forEach(star => {
-            star.addEventListener('click', function() {
-                const rating = this.getAttribute('data-rating');
-                const stars = document.querySelectorAll('.rating-stars i');
-                stars.forEach((s, index) => {
-                    s.classList.toggle('fas', index < rating);
-                    s.classList.toggle('far', index >= rating);
-                });
-            });
-        });
-
-        // Back to Top Button
-        window.addEventListener('scroll', function() {
-            const backToTop = document.querySelector('.back-to-top');
-            backToTop.style.display = (window.scrollY > 300) ? 'block' : 'none';
+            const input = document.querySelector('.quantity-input');
+            let value = parseInt(input.value);
+            input.value = value + 1;
         });
         
-        document.querySelector('.back-to-top').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({top: 0, behavior: 'smooth'});
+        // Back to top button
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 300) {
+                $('.back-to-top').fadeIn('slow');
+            } else {
+                $('.back-to-top').fadeOut('slow');
+            }
+        });
+        $('.back-to-top').click(function () {
+            $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+            return false;
         });
     </script>
 </body>
