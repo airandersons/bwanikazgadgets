@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Login | Bwanikaz Gadget Collections</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Login to your Bwanikaz Gadget Collections account to shop for premium electronics in Kampala" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary: #0d6efd;
+            --secondary: #6c757d;
+            --dark: #212529;
+            --light: #f8f9fa;
+            --danger: #dc3545;
+            --warning: #ffc107;
+            --success: #198754;
+            --info: #0dcaf0;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background-color: #f5f5f5;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        
+        .navbar-dark .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 10px 15px;
+        }
+        
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #fff;
+        }
+        
+        .bg-primary {
+            background-color: var(--primary) !important;
+        }
+        
+        .text-primary {
+            color: var(--primary) !important;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: #fff;
+        }
+        
+        .top-bar {
+            background-color: var(--dark);
+            color: #fff;
+            font-size: 12px;
+            padding: 5px 0;
+        }
+        
+        .top-bar a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .main-header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 24px;
+        }
+        
+        .logo span:first-child {
+            color: var(--dark);
+        }
+        
+        .logo span:last-child {
+            color: var(--primary);
+        }
+        
+        .login-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .login-header h2 {
+            color: var(--dark);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .login-header p {
+            color: var(--secondary);
+            font-size: 14px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            font-weight: 500;
+            font-size: 14px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .form-control {
+            height: 45px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            padding: 10px 15px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+        }
+        
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+        
+        .login-footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        
+        .login-footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .login-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .social-login {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .social-login p {
+            position: relative;
+            color: var(--secondary);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .social-login p:before,
+        .social-login p:after {
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 30%;
+            background: #ddd;
+            top: 50%;
+        }
+        
+        .social-login p:before {
+            left: 0;
+        }
+        
+        .social-login p:after {
+            right: 0;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            transform: translateY(-3px);
+        }
+        
+        .facebook {
+            background-color: #3b5998;
+        }
+        
+        .google {
+            background-color: #db4437;
+        }
+        
+        .twitter {
+            background-color: #1da1f2;
+        }
+        
+        .footer {
+            background: var(--dark);
+            color: #fff;
+            padding: 20px 0;
+            margin-top: auto;
+        }
+        
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        @media (max-width: 575.98px) {
+            .login-container {
+                margin: 20px auto;
+                padding: 20px;
+            }
+            
+            .social-login p:before,
+            .social-login p:after {
+                width: 25%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar Start -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <a href="#"><i class="fas fa-map-marker-alt mr-2"></i> Kampala, Uganda</a>
+                        <a href="#"><i class="fas fa-phone-alt mr-2"></i> +256 751 045276</a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-right">
+                    <div class="d-flex justify-content-end">
+                        <a href="#">Help & FAQs</a>
+                        <a href="#">USD</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top Bar End -->
+
+    <!-- Main Header Start -->
+    <header class="main-header py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-12 mb-3 mb-lg-0">
+                    <a href="index.html" class="logo text-decoration-none">
+                        <span class="h1 text-uppercase text-dark px-2">Bwanikaz</span>
+                        <span class="h1 text-uppercase text-primary px-2">Gadgets</span>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-md-8 mb-3 mb-md-0">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search phones, laptops, accessories...">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 text-right">
+                    <div class="d-flex align-items-center justify-content-end">
+                        <a href="#" class="btn btn-outline-primary mr-2"><i class="far fa-heart"></i></a>
+                        <a href="#" class="btn btn-outline-primary">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge badge-danger">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Header End -->
+
+    <!-- Login Form Start -->
+    <div class="container">
+        <div class="login-container">
+            <div class="login-header">
+                <h2>Welcome Back!</h2>
+                <p>Sign in to access your account and continue shopping</p>
+            </div>
+            
+            <form>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                    <small class="form-text text-right">
+                        <a href="forgot-password.html">Forgot password?</a>
+                    </small>
+                </div>
+                
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="remember">
+                    <label class="form-check-label" for="remember">Remember me</label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                
+                <div class="login-footer">
+                    Don't have an account? <a href="register.html">Create one</a>
+                </div>
+                
+                <div class="social-login">
+                    <p>Or sign in with</p>
+                    <div class="social-icons">
+                        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="google"><i class="fab fa-google"></i></a>
+                        <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Login Form End -->
+
+    <!-- Footer Start -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <a class="text-white" href="#">Bwanikaz Gadget Collections</a>. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
